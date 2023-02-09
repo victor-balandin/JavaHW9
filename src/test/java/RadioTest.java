@@ -262,7 +262,7 @@ public class RadioTest {
     @Test
     public void selectAboveBorderVolumeTest () {   // Тестируем установку громкости за верхней границей
         Radio radio = new Radio();
-        radio.setVolume(13);
+        radio.setVolume(130);
 
         int expected = 0;
         int actual = radio.getVolume();
@@ -307,9 +307,9 @@ public class RadioTest {
     @Test
     public void selectUpperBoundVolumeTest () {   // Тестируем установку громкости в пределах верхних граничных значений
         Radio radio = new Radio();
-        radio.setVolume(9);
+        radio.setVolume(99);
 
-        int expected = 9;
+        int expected = 99;
         int actual = radio.getVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -319,9 +319,9 @@ public class RadioTest {
     @Test
     public void selectUpperBoundVolumeTestTwo () {   // Тестируем установку громкости в пределах верхних граничных значений
         Radio radio = new Radio();
-        radio.setVolume(10);
+        radio.setVolume(100);
 
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -330,7 +330,7 @@ public class RadioTest {
     @Test
     public void selectUpperBoundVolumeTestThree () {   // Тестируем установку громкости в пределах верхних граничных значений
         Radio radio = new Radio();
-        radio.setVolume(11);
+        radio.setVolume(101);
 
         int expected = 0;
         int actual = radio.getVolume();
@@ -363,10 +363,10 @@ public class RadioTest {
 @Test
     public void shouldUpperBoundIncreaseVolume () {   // Тестируем повышение громкости в верхней границе
         Radio radio = new Radio();
-        radio.setVolume(10);
+        radio.setVolume(100);
         radio.increaseVolume();
 
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getVolume();
         Assertions.assertEquals(expected, actual);
     }
@@ -402,5 +402,14 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void shouldSetStationCount () { //   // Тестируем понижение громкости в верхней границе
+        Radio radio = new Radio(25);
+        radio.setStation(12);
+
+        int expected = 12;
+        int actual = radio.getStation();
+        Assertions.assertEquals(expected, actual);
+    }
 
 }
